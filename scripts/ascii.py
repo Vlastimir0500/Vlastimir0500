@@ -1,158 +1,92 @@
-from pathlib import Path
-from urllib.request import urlretrieve
 from PIL import Image
+import os
+from xml.sax.saxutils import escape
 
-# ----------------------------
-# Configuration
-# ----------------------------
-
-USERNAME = "Vlastimir0500"
-
-WIDTH = 80
+INPUT = "assets/avatar.png"
+OUTPUT = "assets/portrait.svg"
 
 ASCII = "@%#*+=-:. "
 
-ASSETS = Path("assets")
-ASSETS.mkdir(exist_ok=True)
+WIDTH = 90
+FONT_SIZE = 8
+LINE_HEIGHT = 8
+FONT = "Consolas"
 
-AVATAR = ASSETS / "avatar.png"
-OUTPUT = ASSETS / "portrait.svg"
 
-# ----------------------------
-# Download avatar
-# ----------------------------
+def image_to_ascii(path):
+    img = Image.open(path).convert("L")
 
-def download_avatar():
-    url = f"https://github.com/{USERNAME}.png"
-    print("Downloading avatar...")
-    urlretrieve(url, AVATAR)
-    print("Done.")
+    aspect = img.height / img.width
+    height = int(WIDTH * aspect * 0.55)
 
-# ----------------------------
-# Resize
-# ----------------------------
+    img = img.resize((WIDTH, height))
 
-def resize(image):
+    pixels = img.load()
 
-    width, height = image.size
+    lines = []
 
-    aspect = height / width
+    for y in range(height):
+        row = ""
+        for x in range(WIDTH):
+            value = pixels[x, y]
+            index = int(value / 255 * (len(ASCII) - 1))
+            row += ASCII[index]
+        lines.append(row)
 
-    new_height = int(WIDTH * aspect * 0.55)
+    return lines
 
-    return image.resize((WIDTH, new_height))
 
-# ----------------------------
-# Convert to grayscale
-# ----------------------------
-
-def grayscale(image):
-    return image.convert("L")
-
-# ----------------------------
-# Pixels -> ASCII
-# ----------------------------
-
-def to_ascii(image):
-
-    pixels = image.getdata()
-
-    chars = ""
-
-    for pixel in pixels:
-        chars += ASCII[pixel * (len(ASCII)-1) // 255]
-
-    return chars
-
-# ----------------------------
-# SVG
-# ----------------------------
-
-def save_svg(chars, width, height):
-
-    font_size = 10
-
-    spacing = 9
+def make_svg(lines):
+    width = WIDTH * FONT_SIZE * 0.62
+    height = len(lines) * LINE_HEIGHT + 20
 
     svg = []
 
     svg.append(
-f'''<svg xmlns="http://www.w3.org/2000/svg"
-width="{width*spacing}"
-height="{height*spacing}"
-viewBox="0 0 {width*spacing} {height*spacing}">
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
+        f'viewBox="0 0 {width} {height}">'
+    )
 
-<rect width="100%" height="100%" fill="#0d1117"/>
+    svg.append(
+        '<rect width="100%" height="100%" fill="#0d1117"/>'
+    )
 
-<style>
+    svg.append(
+        f'<text x="10" y="18" '
+        f'font-family="{FONT}" '
+        f'font-size="{FONT_SIZE}" '
+        f'fill="#7aa2ff" '
+        f'xml:space="preserve">'
+    )
 
-text {{
-font-family: monospace;
-font-size: {font_size}px;
-fill: #58a6ff;
-}}
+    y = 18
 
-</style>
-''')
+    for line in lines:
+        svg.append(
+            f'<tspan x="10" y="{y}">{escape(line)}</tspan>'
+        )
+        y += LINE_HEIGHT
 
-    index = 0
-
-    delay = 0
-
-    for y in range(height):
-
-        for x in range(width):
-
-            c = chars[index]
-
-            svg.append(f'''
-<text
-x="{x*spacing}"
-y="{(y+1)*spacing}"
-opacity="0">
-
-{c}
-
-<animate
-attributeName="opacity"
-begin="{delay:.2f}s"
-dur="0.2s"
-fill="freeze"
-from="0"
-to="1"/>
-
-</text>
-''')
-
-            index += 1
-
-        delay += 0.03
-
+    svg.append("</text>")
     svg.append("</svg>")
 
-    OUTPUT.write_text("\n".join(svg), encoding="utf8")
+    return "\n".join(svg)
 
-    print("Saved:", OUTPUT)
-
-# ----------------------------
-# Main
-# ----------------------------
 
 def main():
+    if not os.path.exists(INPUT):
+        print(f"Cannot find {INPUT}")
+        return
 
-    download_avatar()
+    lines = image_to_ascii(INPUT)
 
-    img = Image.open(AVATAR)
+    svg = make_svg(lines)
 
-    img = resize(img)
+    with open(OUTPUT, "w", encoding="utf-8") as f:
+        f.write(svg)
 
-    img = grayscale(img)
+    print(f"Generated {OUTPUT}")
 
-    width, height = img.size
-
-    chars = to_ascii(img)
-
-    save_svg(chars, width, height)
 
 if __name__ == "__main__":
     main()
