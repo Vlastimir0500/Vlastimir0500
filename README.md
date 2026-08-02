@@ -1,41 +1,295 @@
-<p align="center">
-  <img src="assets/banner.svg" width="100%">
-</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="350" viewBox="0 0 1200 350">
 
-<table>
-<tr>
+<defs>
 
-<td width="38%" align="center">
+<linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#0d1117"/>
+<stop offset="100%" stop-color="#161b22"/>
+</linearGradient>
 
-<img src="assets/portrait.svg" width="100%">
+<filter id="glow">
+<feGaussianBlur stdDeviation="3" result="blur"/>
+<feMerge>
+<feMergeNode in="blur"/>
+<feMergeNode in="SourceGraphic"/>
+</feMerge>
+</filter>
 
-</td>
+</defs>
 
-<td width="62%" align="center">
+<!-- Background -->
 
-<img src="assets/neofetch.svg" width="100%">
+<rect width="1200" height="350" fill="url(#bg)"/>
 
-</td>
+<!-- Grid -->
 
-</tr>
-</table>
+<g stroke="#30363d" stroke-width="1" opacity="0.15">
 
+<path d="M0 50H1200"/>
+<path d="M0 100H1200"/>
+<path d="M0 150H1200"/>
+<path d="M0 200H1200"/>
+<path d="M0 250H1200"/>
+<path d="M0 300H1200"/>
 
-# 💫 About Me:
-<br>Hey, I'm Vlastimir.<br><br>I'm a computer science enthusiast who loves building, breaking, and understanding technology.<br><br>Interests:<br>• Artificial Intelligence<br>• Cybersecurity<br>• Machine Learning<br>• Systems Programming<br>• Open Source<br>• Research<br><br>Currently working on:<br>• LeetCode<br>• TryHackMe<br>• Python projects<br>• Linux<br>• Git & GitHub<br>• Open-source contributions<br>• Building things that make me learn<br><br>I enjoy solving problems, exploring how systems work, and continuously expanding my knowledge—one project at a time.<br><br>Always learning. Always building.<br>```<br>
+<path d="M100 0V350"/>
+<path d="M200 0V350"/>
+<path d="M300 0V350"/>
+<path d="M400 0V350"/>
+<path d="M500 0V350"/>
+<path d="M600 0V350"/>
+<path d="M700 0V350"/>
+<path d="M800 0V350"/>
+<path d="M900 0V350"/>
+<path d="M1000 0V350"/>
+<path d="M1100 0V350"/>
 
+</g>
 
-## 🌐 Socials:
-[![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white)](https://discord.gg/vlastimir0081) 
+<!-- Title -->
 
-# 💻 Tech Stack:
-![AssemblyScript](https://img.shields.io/badge/assembly%20script-%23000000.svg?style=for-the-badge&logo=assemblyscript&logoColor=white) ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white) ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white) ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Julia](https://img.shields.io/badge/-Julia-9558B2?style=for-the-badge&logo=julia&logoColor=white) ![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white) ![Objective-C](https://img.shields.io/badge/OBJECTIVE--C-%233A95E3.svg?style=for-the-badge&logo=apple&logoColor=white) ![Octave](https://img.shields.io/badge/OCTAVE-darkblue?style=for-the-badge&logo=octave&logoColor=fcd683) ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white) ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white) ![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD) ![Couchbase](https://img.shields.io/badge/Couchbase-EA2328?style=for-the-badge&logo=couchbase&logoColor=white) ![Neo4J](https://img.shields.io/badge/Neo4j-008CC1?style=for-the-badge&logo=neo4j&logoColor=white) ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white) ![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white) ![Hibernate](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white) ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![Plotly](https://img.shields.io/badge/Plotly-%233F4F75.svg?style=for-the-badge&logo=plotly&logoColor=white) ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white) ![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white) ![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white) ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white) ![Cisco](https://img.shields.io/badge/cisco-%23049fd9.svg?style=for-the-badge&logo=cisco&logoColor=black) ![CodeCov](https://img.shields.io/badge/codecov-%23ff0077.svg?style=for-the-badge&logo=codecov&logoColor=white) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![Homebridge](https://img.shields.io/badge/homebridge-%23491F59.svg?style=for-the-badge&logo=homebridge&logoColor=white) ![Packer](https://img.shields.io/badge/packer-%23E7EEF0.svg?style=for-the-badge&logo=packer&logoColor=%2302A8EF) ![Splunk](https://img.shields.io/badge/splunk-%23000000.svg?style=for-the-badge&logo=splunk&logoColor=white) ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![Azure](https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white) ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white) ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white) ![OpenStack](https://img.shields.io/badge/Openstack-%23f01742.svg?style=for-the-badge&logo=openstack&logoColor=white) ![Windows Terminal](https://img.shields.io/badge/Windows%20Terminal-%234D4D4D.svg?style=for-the-badge&logo=windows-terminal&logoColor=white) ![Rust](https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white) ![Ruby](https://img.shields.io/badge/ruby-%23CC342D.svg?style=for-the-badge&logo=ruby&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![R](https://img.shields.io/badge/r-%23276DC3.svg?style=for-the-badge&logo=r&logoColor=white) ![PowerShell](https://img.shields.io/badge/PowerShell-%235391FE.svg?style=for-the-badge&logo=powershell&logoColor=white) ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
-# 📊 GitHub Stats:
-![](https://github-readme-stats.shion.dev/api?username=Vlastimir0500&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
-![](https://streak-stats.demolab.com/?user=Vlastimir0500&theme=dark&hide_border=false)<br/>
-![](https://github-readme-stats.shion.dev/api/top-langs/?username=Vlastimir0500&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
+<text
+x="60"
+y="80"
+fill="white"
+font-size="42"
+font-family="monospace">
 
----
-[![](https://komarev.com/ghpvc/?username=Vlastimir0500&icon=0&color=0)](https://visitcount.itsvg.in)
+> whoami
 
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+</text>
+
+<text
+x="60"
+y="130"
+fill="#58a6ff"
+font-size="56"
+font-family="monospace"
+filter="url(#glow)">
+
+VLASTIMIR
+
+</text>
+
+<text
+x="60"
+y="170"
+fill="#8b949e"
+font-size="22"
+font-family="monospace">
+
+AI • Cybersecurity • Python • Open Source
+
+</text>
+
+<!-- Cursor -->
+
+<rect
+x="520"
+y="95"
+width="12"
+height="40"
+fill="#58a6ff">
+
+<animate
+attributeName="opacity"
+values="1;0;1"
+dur="1s"
+repeatCount="indefinite"/>
+
+</rect>
+
+<!-- Terminal -->
+
+<rect
+x="60"
+y="220"
+width="430"
+height="90"
+rx="10"
+fill="#010409"
+stroke="#30363d"/>
+
+<text
+x="80"
+y="250"
+fill="#3fb950"
+font-size="18"
+font-family="monospace">
+
+$ status
+
+</text>
+
+<text
+x="80"
+y="280"
+fill="white"
+font-size="18"
+font-family="monospace">
+
+Learning Python...
+
+</text>
+
+<text
+x="80"
+y="305"
+fill="#58a6ff"
+font-size="18"
+font-family="monospace">
+
+Building GitHub Profile...
+
+</text>
+
+<!-- Stats -->
+
+<text x="620" y="70"
+fill="white"
+font-size="20"
+font-family="monospace">
+
+CPU
+
+</text>
+
+<rect x="620" y="85"
+width="250"
+height="10"
+fill="#21262d"/>
+
+<rect x="620" y="85"
+width="180"
+height="10"
+fill="#3fb950">
+
+<animate
+attributeName="width"
+values="140;200;170;180"
+dur="3s"
+repeatCount="indefinite"/>
+
+</rect>
+
+<text x="620"
+y="130"
+fill="white"
+font-size="20"
+font-family="monospace">
+
+RAM
+
+</text>
+
+<rect x="620"
+y="145"
+width="250"
+height="10"
+fill="#21262d"/>
+
+<rect
+x="620"
+y="145"
+width="220"
+height="10"
+fill="#58a6ff">
+
+<animate
+attributeName="width"
+values="180;230;200;220"
+dur="4s"
+repeatCount="indefinite"/>
+
+</rect>
+
+<text
+x="620"
+y="190"
+fill="white"
+font-size="20"
+font-family="monospace">
+
+GPU
+
+</text>
+
+<rect
+x="620"
+y="205"
+width="250"
+height="10"
+fill="#21262d"/>
+
+<rect
+x="620"
+y="205"
+width="160"
+height="10"
+fill="#f0883e">
+
+<animate
+attributeName="width"
+values="120;180;150;160"
+dur="5s"
+repeatCount="indefinite"/>
+
+</rect>
+
+<!-- Neural Network -->
+
+<g
+stroke="#58a6ff"
+stroke-width="2"
+opacity="0.6">
+
+<line x1="940" y1="80" x2="1030" y2="130"/>
+<line x1="940" y1="180" x2="1030" y2="130"/>
+<line x1="1030" y1="130" x2="1110" y2="90"/>
+<line x1="1030" y1="130" x2="1110" y2="210"/>
+
+</g>
+
+<g fill="#58a6ff">
+
+<circle cx="940" cy="80" r="6">
+<animate attributeName="r" values="6;9;6" dur="2s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="940" cy="180" r="6">
+<animate attributeName="r" values="6;8;6" dur="3s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="1030" cy="130" r="7">
+<animate attributeName="r" values="7;10;7" dur="2.5s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="1110" cy="90" r="6">
+<animate attributeName="r" values="6;9;6" dur="2.8s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="1110" cy="210" r="6">
+<animate attributeName="r" values="6;8;6" dur="3.5s" repeatCount="indefinite"/>
+</circle>
+
+</g>
+
+<!-- Floating particles -->
+
+<g fill="#58a6ff" opacity="0.5">
+
+<circle cx="980" cy="280" r="2">
+<animate attributeName="cy" values="280;250;280" dur="4s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="1080" cy="310" r="3">
+<animate attributeName="cy" values="310;260;310" dur="6s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="1150" cy="260" r="2">
+<animate attributeName="cy" values="260;220;260" dur="5s" repeatCount="indefinite"/>
+</circle>
+
+</g>
+
+</svg>
