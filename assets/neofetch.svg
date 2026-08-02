@@ -1,93 +1,243 @@
-<svg width="900" height="600" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="borderGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#7aa2f7"/>
-      <stop offset="50%" stop-color="#bb9af7"/>
-      <stop offset="100%" stop-color="#7dcfff"/>
-    </linearGradient>
-    <clipPath id="roundClip">
-      <rect x="0" y="0" width="900" height="600" rx="16" ry="16"/>
-    </clipPath>
-    <style>
-      text { font-family: 'JetBrains Mono','Fira Code',Consolas,Menlo,monospace; }
-      .blink { animation: blink 1.1s steps(1) infinite; }
-      @keyframes blink { 0%,49% { opacity:1; } 50%,100% { opacity:0; } }
-    </style>
-  </defs>
+<svg width="900" height="460" viewBox="0 0 900 460"
+xmlns="http://www.w3.org/2000/svg">
 
-  <!-- soft outer glow border -->
-  <rect x="1" y="1" width="898" height="598" rx="16" ry="16" fill="none" stroke="url(#borderGlow)" stroke-width="1.5" opacity="0.55"/>
+<defs>
 
-  <g clip-path="url(#roundClip)">
-    <rect x="0" y="0" width="900" height="600" fill="#1a1b26"/>
+<linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#0b1220"/>
+    <stop offset="100%" stop-color="#171b2e"/>
+</linearGradient>
 
-    <!-- title bar -->
-    <rect x="0" y="0" width="900" height="48" fill="#16161e"/>
-    <line x1="0" y1="48" x2="900" y2="48" stroke="#292e42" stroke-width="1"/>
-    <circle cx="28" cy="24" r="6.5" fill="#f7768e"/>
-    <circle cx="50" cy="24" r="6.5" fill="#e0af68"/>
-    <circle cx="72" cy="24" r="6.5" fill="#9ece6a"/>
-    <text x="450" y="29" text-anchor="middle" font-size="13" fill="#565f89" font-weight="500">vlastimir@arch:~</text>
+<pattern id="grid"
+width="28"
+height="28"
+patternUnits="userSpaceOnUse">
 
-    <!-- vertical divider between columns -->
-    <line x1="450" y1="72" x2="450" y2="410" stroke="#292e42" stroke-width="1"/>
+<path
+d="M28 0H0V28"
+fill="none"
+stroke="#1b2740"
+stroke-width="0.6"/>
 
-    <!-- LEFT COLUMN: fastfetch -->
-    <text x="42" y="130" font-size="16" fill="#c0caf5"><tspan fill="#9ece6a" font-weight="700">$</tspan> fastfetch</text>
-    <rect x="150" y="117" width="9" height="16" fill="#9ece6a" class="blink"/>
+</pattern>
 
-    <text x="225" y="180" text-anchor="middle" font-size="17" font-weight="600" fill="#7aa2f7">
-      <tspan x="225">/\</tspan>
-      <tspan x="225" dy="25">/  \</tspan>
-      <tspan x="225" dy="25">/ /\ \</tspan>
-      <tspan x="225" dy="25">/ /  \ \</tspan>
-      <tspan x="225" dy="25">/ /____\ \</tspan>
-      <tspan x="225" dy="25">/_/    \_\</tspan>
-    </text>
-    <text x="225" y="345" text-anchor="middle" font-size="16" font-weight="700" letter-spacing="1" fill="#c0caf5">Arch Linux</text>
+<filter id="shadow">
+<feDropShadow
+dx="0"
+dy="0"
+stdDeviation="12"
+flood-color="#5d8dff"
+flood-opacity="0.22"/>
+</filter>
 
-    <!-- RIGHT COLUMN: whoami -->
-    <text x="490" y="130" font-size="16" fill="#c0caf5"><tspan fill="#9ece6a" font-weight="700">$</tspan> whoami</text>
+<style>
 
-    <text x="490" y="168" font-size="14.5" font-weight="600" fill="#bb9af7">OS</text>
-    <text x="650" y="168" font-size="14.5" fill="#c0caf5">Arch Linux</text>
+text{
+font-family:"JetBrains Mono","Cascadia Code","Consolas",monospace;
+}
 
-    <text x="490" y="198" font-size="14.5" font-weight="600" fill="#bb9af7">Host</text>
-    <text x="650" y="198" font-size="14.5" fill="#c0caf5">github.com</text>
+.prompt{
+fill:#86efac;
+font-size:17px;
+font-weight:600;
+}
 
-    <text x="490" y="228" font-size="14.5" font-weight="600" fill="#bb9af7">User</text>
-    <text x="650" y="228" font-size="14.5" fill="#c0caf5">Vlastimir</text>
+.title{
+fill:#7f8fb6;
+font-size:14px;
+}
 
-    <text x="490" y="258" font-size="14.5" font-weight="600" fill="#bb9af7">Shell</text>
-    <text x="650" y="258" font-size="14.5" fill="#c0caf5">zsh</text>
+.cursor{
+fill:#7aa2ff;
+animation:blink 1s steps(1) infinite;
+}
 
-    <text x="490" y="288" font-size="14.5" font-weight="600" fill="#bb9af7">Editor</text>
-    <text x="650" y="288" font-size="14.5" fill="#c0caf5">Neovim</text>
+@keyframes blink{
+50%{
+opacity:0;
+}
+}
 
-    <text x="490" y="318" font-size="14.5" font-weight="600" fill="#bb9af7">Languages</text>
-    <text x="650" y="318" font-size="14.5" fill="#c0caf5">Python &#8226; C++</text>
+</style>
 
-    <text x="490" y="348" font-size="14.5" font-weight="600" fill="#bb9af7">Focus</text>
-    <text x="650" y="348" font-size="14.5" fill="#c0caf5">AI &#8226; Cybersecurity</text>
+</defs>
 
-    <text x="490" y="378" font-size="14.5" font-weight="600" fill="#bb9af7">Learning</text>
-    <text x="650" y="378" font-size="14.5" fill="#c0caf5">LeetCode &#8226; TryHackMe</text>
+<!-- Window -->
 
-    <!-- separator before history -->
-    <line x1="34" y1="410" x2="866" y2="410" stroke="#292e42" stroke-width="1"/>
+<rect
+x="20"
+y="20"
+width="860"
+height="420"
+rx="18"
+fill="url(#bg)"
+stroke="#313c5b"
+stroke-width="2"
+filter="url(#shadow)"/>
 
-    <!-- HISTORY SECTION -->
-    <text x="42" y="450" font-size="16" fill="#c0caf5"><tspan fill="#9ece6a" font-weight="700">$</tspan> history</text>
+<!-- Grid -->
 
-    <text x="42" y="482" font-size="14" fill="#565f89">vlastimir@arch:~$<tspan fill="#c0caf5"> python main.py</tspan></text>
+<rect
+x="20"
+y="20"
+width="860"
+height="420"
+rx="18"
+fill="url(#grid)"
+opacity="0.28"/>
 
-    <text x="42" y="508" font-size="14"><tspan fill="#9ece6a" font-weight="700">&#10003;</tspan><tspan fill="#c0caf5"> Building GitHub profile...</tspan></text>
+<!-- Title Bar -->
 
-    <!-- final prompt -->
-    <text x="42" y="550" font-size="16" fill="#c0caf5">vlastimir@arch:~<tspan fill="#9ece6a" font-weight="700">$</tspan> </text>
-    <rect x="224" y="537" width="9" height="17" fill="#9ece6a" class="blink"/>
-  </g>
+<rect
+x="20"
+y="20"
+width="860"
+height="46"
+rx="18"
+fill="#0b0f18"/>
 
-  <!-- crisp outer border -->
-  <rect x="0.75" y="0.75" width="898.5" height="598.5" rx="15.25" ry="15.25" fill="none" stroke="#292e42" stroke-width="1.5"/>
-</svg>
+<line
+x1="20"
+y1="66"
+x2="880"
+y2="66"
+stroke="#29334f"/>
+
+<circle cx="46" cy="43" r="6.5" fill="#ff5f56"/>
+<circle cx="68" cy="43" r="6.5" fill="#ffbd2e"/>
+<circle cx="90" cy="43" r="6.5" fill="#27c93f"/>
+
+<text
+x="450"
+y="46"
+text-anchor="middle"
+class="title">
+vlastimir@arch:~
+</text>
+
+<!-- Prompt -->
+
+<text
+x="45"
+y="110"
+class="prompt">
+
+<tspan>vlastimir@arch:~$ fastfetch </tspan>
+
+<tspan class="cursor">█</tspan>
+
+</text>
+
+<!-- ================= LEFT : ARCH ================= -->
+
+<text x="120" y="155"
+      fill="#6ea8ff"
+      font-size="19"
+      font-weight="700"
+      text-anchor="middle">
+
+<tspan x="120">          /\</tspan>
+<tspan x="120" dy="24">         /  \</tspan>
+<tspan x="120" dy="24">        / /\ \</tspan>
+<tspan x="120" dy="24">       / /  \ \</tspan>
+<tspan x="120" dy="24">      / /____\ \</tspan>
+<tspan x="120" dy="24">     /_/      \_\</tspan>
+
+</text>
+
+<text
+x="120"
+y="330"
+text-anchor="middle"
+fill="#8b97b3"
+font-size="14">
+
+Arch Linux
+
+</text>
+
+<!-- Divider -->
+
+<line
+x1="285"
+y1="120"
+x2="285"
+y2="340"
+stroke="#2b3654"/>
+
+<!-- ================= RIGHT : FASTFETCH ================= -->
+
+<text
+x="330"
+y="110"
+fill="#86efac"
+font-size="17"
+font-weight="600">
+
+$ whoami
+
+</text>
+
+<!-- Labels -->
+
+<text x="330" y="150" fill="#7aa2ff" font-size="15" font-weight="600">OS</text>
+<text x="330" y="182" fill="#7aa2ff" font-size="15" font-weight="600">User</text>
+<text x="330" y="214" fill="#7aa2ff" font-size="15" font-weight="600">Shell</text>
+<text x="330" y="246" fill="#7aa2ff" font-size="15" font-weight="600">Editor</text>
+<text x="330" y="278" fill="#7aa2ff" font-size="15" font-weight="600">Terminal</text>
+<text x="330" y="310" fill="#7aa2ff" font-size="15" font-weight="600">Languages</text>
+<text x="330" y="342" fill="#7aa2ff" font-size="15" font-weight="600">Focus</text>
+
+<!-- Values -->
+
+<text x="480" y="150" fill="#edf2ff" font-size="15">Arch Linux</text>
+<text x="480" y="182" fill="#edf2ff" font-size="15">Vlastimir</text>
+<text x="480" y="214" fill="#edf2ff" font-size="15">zsh</text>
+<text x="480" y="246" fill="#edf2ff" font-size="15">Neovim</text>
+<text x="480" y="278" fill="#edf2ff" font-size="15">Ghostty</text>
+<text x="480" y="310" fill="#edf2ff" font-size="15">Python • C++</text>
+<text x="480" y="342" fill="#edf2ff" font-size="15">AI • Cybersecurity</text>
+
+<line
+x1="330"
+y1="365"
+x2="820"
+y2="365"
+stroke="#2b3654"/>
+<!-- ================= TERMINAL SESSION ================= -->
+
+<text x="45" y="392"
+      fill="#86efac"
+      font-size="17"
+      font-weight="600">
+
+vlastimir@arch:~$ python main.py
+
+</text>
+
+<text
+x="75"
+y="420"
+fill="#e6edf7"
+font-size="15">
+
+Building GitHub profile...
+
+</text>
+
+<text
+x="45"
+y="450"
+fill="#86efac"
+font-size="17"
+font-weight="600">
+
+vlastimir@arch:~$ █
+
+<animate
+attributeName="opacity"
+values="1;0;1"
+dur="1s"
+repeatCount="indefinite"/>
+
+</text>
