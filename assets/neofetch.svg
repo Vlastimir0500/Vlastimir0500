@@ -1,4 +1,5 @@
-<svg width="900" height="460" viewBox="0 0 900 460"
+<svg width="900" height="460"
+viewBox="0 0 900 460"
 xmlns="http://www.w3.org/2000/svg">
 
 <defs>
@@ -12,28 +13,31 @@ xmlns="http://www.w3.org/2000/svg">
 width="28"
 height="28"
 patternUnits="userSpaceOnUse">
-
-<path
-d="M28 0H0V28"
-fill="none"
-stroke="#1b2740"
-stroke-width="0.6"/>
-
+    <path
+        d="M28 0H0V28"
+        fill="none"
+        stroke="#1b2740"
+        stroke-width="0.6"/>
 </pattern>
 
 <filter id="shadow">
-<feDropShadow
-dx="0"
-dy="0"
-stdDeviation="12"
-flood-color="#5d8dff"
-flood-opacity="0.22"/>
+    <feDropShadow
+        dx="0"
+        dy="0"
+        stdDeviation="12"
+        flood-color="#6ea8ff"
+        flood-opacity="0.20"/>
 </filter>
 
 <style>
 
 text{
-font-family:"JetBrains Mono","Cascadia Code","Consolas",monospace;
+font-family:"JetBrains Mono","Fira Code","Consolas",monospace;
+}
+
+.title{
+fill:#8893b8;
+font-size:14px;
 }
 
 .prompt{
@@ -42,20 +46,8 @@ font-size:17px;
 font-weight:600;
 }
 
-.title{
-fill:#7f8fb6;
-font-size:14px;
-}
-
 .cursor{
 fill:#7aa2ff;
-animation:blink 1s steps(1) infinite;
-}
-
-@keyframes blink{
-50%{
-opacity:0;
-}
 }
 
 </style>
@@ -71,7 +63,7 @@ width="860"
 height="420"
 rx="18"
 fill="url(#bg)"
-stroke="#313c5b"
+stroke="#2f3b5d"
 stroke-width="2"
 filter="url(#shadow)"/>
 
@@ -84,7 +76,7 @@ width="860"
 height="420"
 rx="18"
 fill="url(#grid)"
-opacity="0.28"/>
+opacity="0.22"/>
 
 <!-- Title Bar -->
 
@@ -128,47 +120,48 @@ class="prompt">
 
 </text>
 
-<!-- ================= LEFT : ARCH ================= -->
+<!-- ================= LEFT PANEL ================= -->
 
-<text x="120" y="155"
-      fill="#6ea8ff"
-      font-size="19"
-      font-weight="700"
-      text-anchor="middle">
+<line
+x1="300"
+y1="95"
+x2="300"
+y2="360"
+stroke="#2b3654"
+stroke-width="1"/>
 
-<tspan x="120">          /\</tspan>
-<tspan x="120" dy="24">         /  \</tspan>
-<tspan x="120" dy="24">        / /\ \</tspan>
-<tspan x="120" dy="24">       / /  \ \</tspan>
-<tspan x="120" dy="24">      / /____\ \</tspan>
-<tspan x="120" dy="24">     /_/      \_\</tspan>
+<text
+x="160"
+y="150"
+fill="#6ea8ff"
+font-size="20"
+font-weight="700"
+text-anchor="middle">
+
+<tspan x="160">        /\</tspan>
+<tspan x="160" dy="24">       /  \</tspan>
+<tspan x="160" dy="24">      / /\ \</tspan>
+<tspan x="160" dy="24">     / /  \ \</tspan>
+<tspan x="160" dy="24">    / /____\ \</tspan>
+<tspan x="160" dy="24">   /_/      \_\</tspan>
 
 </text>
 
 <text
-x="120"
-y="330"
+x="160"
+y="325"
 text-anchor="middle"
 fill="#8b97b3"
-font-size="14">
+font-size="15">
 
 Arch Linux
 
 </text>
 
-<!-- Divider -->
-
-<line
-x1="285"
-y1="120"
-x2="285"
-y2="340"
-stroke="#2b3654"/>
-
-<!-- ================= RIGHT : FASTFETCH ================= -->
+<!-- ================= RIGHT PANEL ================= -->
 
 <text
-x="330"
+x="340"
 y="110"
 fill="#86efac"
 font-size="17"
@@ -178,61 +171,75 @@ $ whoami
 
 </text>
 
-<!-- Labels -->
+<text x="340" y="150" fill="#7aa2ff" font-size="15" font-weight="600">OS</text>
+<text x="500" y="150" fill="#edf2ff" font-size="15">Arch Linux</text>
 
-<text x="330" y="150" fill="#7aa2ff" font-size="15" font-weight="600">OS</text>
-<text x="330" y="182" fill="#7aa2ff" font-size="15" font-weight="600">User</text>
-<text x="330" y="214" fill="#7aa2ff" font-size="15" font-weight="600">Shell</text>
-<text x="330" y="246" fill="#7aa2ff" font-size="15" font-weight="600">Editor</text>
-<text x="330" y="278" fill="#7aa2ff" font-size="15" font-weight="600">Terminal</text>
-<text x="330" y="310" fill="#7aa2ff" font-size="15" font-weight="600">Languages</text>
-<text x="330" y="342" fill="#7aa2ff" font-size="15" font-weight="600">Focus</text>
+<text x="340" y="182" fill="#7aa2ff" font-size="15" font-weight="600">User</text>
+<text x="500" y="182" fill="#edf2ff" font-size="15">Vlastimir</text>
 
-<!-- Values -->
+<text x="340" y="214" fill="#7aa2ff" font-size="15" font-weight="600">Shell</text>
+<text x="500" y="214" fill="#edf2ff" font-size="15">zsh</text>
 
-<text x="480" y="150" fill="#edf2ff" font-size="15">Arch Linux</text>
-<text x="480" y="182" fill="#edf2ff" font-size="15">Vlastimir</text>
-<text x="480" y="214" fill="#edf2ff" font-size="15">zsh</text>
-<text x="480" y="246" fill="#edf2ff" font-size="15">Neovim</text>
-<text x="480" y="278" fill="#edf2ff" font-size="15">Ghostty</text>
-<text x="480" y="310" fill="#edf2ff" font-size="15">Python • C++</text>
-<text x="480" y="342" fill="#edf2ff" font-size="15">AI • Cybersecurity</text>
+<text x="340" y="246" fill="#7aa2ff" font-size="15" font-weight="600">Editor</text>
+<text x="500" y="246" fill="#edf2ff" font-size="15">Neovim</text>
+
+<text x="340" y="278" fill="#7aa2ff" font-size="15" font-weight="600">Terminal</text>
+<text x="500" y="278" fill="#edf2ff" font-size="15">Ghostty</text>
+
+<text x="340" y="310" fill="#7aa2ff" font-size="15" font-weight="600">Languages</text>
+<text x="500" y="310" fill="#edf2ff" font-size="15">Python • C++</text>
+
+<text x="340" y="342" fill="#7aa2ff" font-size="15" font-weight="600">Focus</text>
+<text x="500" y="342" fill="#edf2ff" font-size="15">AI • Cybersecurity</text>
+
+<!-- ================= TERMINAL ================= -->
 
 <line
-x1="330"
-y1="365"
-x2="820"
-y2="365"
-stroke="#2b3654"/>
-<!-- ================= TERMINAL SESSION ================= -->
+x1="35"
+y1="380"
+x2="865"
+y2="380"
+stroke="#29334f"/>
 
-<text x="45" y="392"
-      fill="#86efac"
-      font-size="17"
-      font-weight="600">
+<text
+x="45"
+y="408"
+fill="#86efac"
+font-size="16">
 
 vlastimir@arch:~$ python main.py
 
 </text>
 
 <text
-x="75"
-y="420"
-fill="#e6edf7"
+x="70"
+y="432"
+fill="#d6e4ff"
 font-size="15">
 
-Building GitHub profile...
+Building GitHub Profile Generator...
 
 </text>
 
 <text
 x="45"
-y="450"
+y="456"
 fill="#86efac"
-font-size="17"
-font-weight="600">
+font-size="16">
 
-vlastimir@arch:~$ █
+vlastimir@arch:~$
+
+</text>
+
+<!-- Blinking Cursor -->
+
+<rect
+x="235"
+y="444"
+width="9"
+height="16"
+rx="1"
+fill="#6ea8ff">
 
 <animate
 attributeName="opacity"
@@ -240,4 +247,8 @@ values="1;0;1"
 dur="1s"
 repeatCount="indefinite"/>
 
-</text>
+</rect>
+
+</svg>
+
+</svg>
