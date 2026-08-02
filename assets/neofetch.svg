@@ -231,7 +231,7 @@ vlastimir@arch:~$
 
 </text>
 
-<!-- Blinking Cursor -->
+<!-- Cursor -->
 
 <rect
 x="235"
@@ -239,7 +239,8 @@ y="444"
 width="9"
 height="16"
 rx="1"
-fill="#6ea8ff">
+fill="#6ea8ff"/>
+    </svg>
 
 <animate
 attributeName="opacity"
@@ -249,6 +250,3 @@ repeatCount="indefinite"/>
 
 </rect>
 
-</svg>
-
-</svg>
