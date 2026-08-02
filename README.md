@@ -2,9 +2,24 @@
   <img src="assets/banner.svg" width="100%">
 </p>
 
-<p align="center">
-  <img src="assets/portrait.svg" width="320">
-</p>
+<table>
+<tr>
+
+<td width="38%" align="center">
+
+<img src="assets/portrait.svg" width="100%">
+
+</td>
+
+<td width="62%" align="center">
+
+<img src="assets/neofetch.svg" width="100%">
+
+</td>
+
+</tr>
+</table>
+
 
 # 💫 About Me:
 <br>Hey, I'm Vlastimir.<br><br>I'm a computer science enthusiast who loves building, breaking, and understanding technology.<br><br>Interests:<br>• Artificial Intelligence<br>• Cybersecurity<br>• Machine Learning<br>• Systems Programming<br>• Open Source<br>• Research<br><br>Currently working on:<br>• LeetCode<br>• TryHackMe<br>• Python projects<br>• Linux<br>• Git & GitHub<br>• Open-source contributions<br>• Building things that make me learn<br><br>I enjoy solving problems, exploring how systems work, and continuously expanding my knowledge—one project at a time.<br><br>Always learning. Always building.<br>```<br>
