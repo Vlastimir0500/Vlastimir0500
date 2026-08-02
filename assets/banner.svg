@@ -1,295 +1,642 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="350" viewBox="0 0 1200 350">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Computational Singularity</title>
 
-<defs>
+<style>
+html,body{
+    margin:0;
+    overflow:hidden;
+    background:#000;
+}
 
-<linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-<stop offset="0%" stop-color="#0d1117"/>
-<stop offset="100%" stop-color="#161b22"/>
-</linearGradient>
+canvas{
+    display:block;
+}
+</style>
 
-<filter id="glow">
-<feGaussianBlur stdDeviation="3" result="blur"/>
-<feMerge>
-<feMergeNode in="blur"/>
-<feMergeNode in="SourceGraphic"/>
-</feMerge>
-</filter>
-
-</defs>
-
-<!-- Background -->
-
-<rect width="1200" height="350" fill="url(#bg)"/>
-
-<!-- Grid -->
+</head>
 
-<g stroke="#30363d" stroke-width="1" opacity="0.15">
-
-<path d="M0 50H1200"/>
-<path d="M0 100H1200"/>
-<path d="M0 150H1200"/>
-<path d="M0 200H1200"/>
-<path d="M0 250H1200"/>
-<path d="M0 300H1200"/>
-
-<path d="M100 0V350"/>
-<path d="M200 0V350"/>
-<path d="M300 0V350"/>
-<path d="M400 0V350"/>
-<path d="M500 0V350"/>
-<path d="M600 0V350"/>
-<path d="M700 0V350"/>
-<path d="M800 0V350"/>
-<path d="M900 0V350"/>
-<path d="M1000 0V350"/>
-<path d="M1100 0V350"/>
+<body>
 
-</g>
+<canvas id="canvas"></canvas>
 
-<!-- Title -->
+<script>
 
-<text
-x="60"
-y="80"
-fill="white"
-font-size="42"
-font-family="monospace">
+const canvas=document.getElementById("canvas");
+const ctx=canvas.getContext("2d");
 
-> whoami
+function resize(){
+    canvas.width=1600;
+    canvas.height=500;
+}
+resize();
 
-</text>
+const stars=[];
 
-<text
-x="60"
-y="130"
-fill="#58a6ff"
-font-size="56"
-font-family="monospace"
-filter="url(#glow)">
+for(let i=0;i<3500;i++){
 
-VLASTIMIR
+    stars.push({
 
-</text>
+        x:Math.random()*canvas.width,
 
-<text
-x="60"
-y="170"
-fill="#8b949e"
-font-size="22"
-font-family="monospace">
+        y:Math.random()*canvas.height,
 
-AI • Cybersecurity • Python • Open Source
+        r:Math.random()*1.5,
 
-</text>
+        alpha:Math.random(),
 
-<!-- Cursor -->
+        speed:Math.random()*0.02
 
-<rect
-x="520"
-y="95"
-width="12"
-height="40"
-fill="#58a6ff">
+    });
 
-<animate
-attributeName="opacity"
-values="1;0;1"
-dur="1s"
-repeatCount="indefinite"/>
+}
 
-</rect>
+let t=0;
 
-<!-- Terminal -->
-
-<rect
-x="60"
-y="220"
-width="430"
-height="90"
-rx="10"
-fill="#010409"
-stroke="#30363d"/>
-
-<text
-x="80"
-y="250"
-fill="#3fb950"
-font-size="18"
-font-family="monospace">
+function animate(){
 
-$ status
+requestAnimationFrame(animate);
 
-</text>
-
-<text
-x="80"
-y="280"
-fill="white"
-font-size="18"
-font-family="monospace">
-
-Learning Python...
-
-</text>
-
-<text
-x="80"
-y="305"
-fill="#58a6ff"
-font-size="18"
-font-family="monospace">
+t+=0.01;
 
-Building GitHub Profile...
-
-</text>
-
-<!-- Stats -->
-
-<text x="620" y="70"
-fill="white"
-font-size="20"
-font-family="monospace">
-
-CPU
-
-</text>
+ctx.fillStyle="#020203";
+ctx.fillRect(0,0,canvas.width,canvas.height);
 
-<rect x="620" y="85"
-width="250"
-height="10"
-fill="#21262d"/>
 
-<rect x="620" y="85"
-width="180"
-height="10"
-fill="#3fb950">
-
-<animate
-attributeName="width"
-values="140;200;170;180"
-dur="3s"
-repeatCount="indefinite"/>
 
-</rect>
-
-<text x="620"
-y="130"
-fill="white"
-font-size="20"
-font-family="monospace">
+// ---------- Nebula ----------
 
-RAM
+let nebula=ctx.createRadialGradient(
 
-</text>
+420,
 
-<rect x="620"
-y="145"
-width="250"
-height="10"
-fill="#21262d"/>
+220,
 
-<rect
-x="620"
-y="145"
-width="220"
-height="10"
-fill="#58a6ff">
+0,
 
-<animate
-attributeName="width"
-values="180;230;200;220"
-dur="4s"
-repeatCount="indefinite"/>
+420,
 
-</rect>
+220,
 
-<text
-x="620"
-y="190"
-fill="white"
-font-size="20"
-font-family="monospace">
+420
 
-GPU
+);
 
-</text>
+nebula.addColorStop(0,"rgba(120,140,255,.22)");
+nebula.addColorStop(.25,"rgba(90,120,255,.09)");
+nebula.addColorStop(.5,"rgba(130,80,255,.05)");
+nebula.addColorStop(1,"rgba(0,0,0,0)");
 
-<rect
-x="620"
-y="205"
-width="250"
-height="10"
-fill="#21262d"/>
+ctx.fillStyle=nebula;
+ctx.fillRect(0,0,1600,500);
 
-<rect
-x="620"
-y="205"
-width="160"
-height="10"
-fill="#f0883e">
 
-<animate
-attributeName="width"
-values="120;180;150;160"
-dur="5s"
-repeatCount="indefinite"/>
 
-</rect>
+// ---------- Stars ----------
 
-<!-- Neural Network -->
+for(const s of stars){
 
-<g
-stroke="#58a6ff"
-stroke-width="2"
-opacity="0.6">
+    s.alpha+=s.speed;
 
-<line x1="940" y1="80" x2="1030" y2="130"/>
-<line x1="940" y1="180" x2="1030" y2="130"/>
-<line x1="1030" y1="130" x2="1110" y2="90"/>
-<line x1="1030" y1="130" x2="1110" y2="210"/>
+    let a=.35+Math.sin(s.alpha)*.65;
 
-</g>
+    ctx.beginPath();
 
-<g fill="#58a6ff">
+    ctx.fillStyle=`rgba(255,255,255,${a})`;
 
-<circle cx="940" cy="80" r="6">
-<animate attributeName="r" values="6;9;6" dur="2s" repeatCount="indefinite"/>
-</circle>
+    ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
 
-<circle cx="940" cy="180" r="6">
-<animate attributeName="r" values="6;8;6" dur="3s" repeatCount="indefinite"/>
-</circle>
+    ctx.fill();
 
-<circle cx="1030" cy="130" r="7">
-<animate attributeName="r" values="7;10;7" dur="2.5s" repeatCount="indefinite"/>
-</circle>
+}
 
-<circle cx="1110" cy="90" r="6">
-<animate attributeName="r" values="6;9;6" dur="2.8s" repeatCount="indefinite"/>
-</circle>
 
-<circle cx="1110" cy="210" r="6">
-<animate attributeName="r" values="6;8;6" dur="3.5s" repeatCount="indefinite"/>
-</circle>
 
-</g>
+// ---------- Cosmic Dust ----------
 
-<!-- Floating particles -->
+for(let i=0;i<450;i++){
 
-<g fill="#58a6ff" opacity="0.5">
+let x=250+i*2.5;
 
-<circle cx="980" cy="280" r="2">
-<animate attributeName="cy" values="280;250;280" dur="4s" repeatCount="indefinite"/>
-</circle>
+let y=240+Math.sin(i*.12+t)*40;
 
-<circle cx="1080" cy="310" r="3">
-<animate attributeName="cy" values="310;260;310" dur="6s" repeatCount="indefinite"/>
-</circle>
+ctx.beginPath();
 
-<circle cx="1150" cy="260" r="2">
-<animate attributeName="cy" values="260;220;260" dur="5s" repeatCount="indefinite"/>
-</circle>
+ctx.fillStyle="rgba(180,190,255,.03)";
 
-</g>
+ctx.arc(x,y,2,0,Math.PI*2);
 
-</svg>
+ctx.fill();
+
+}
+
+
+
+// ---------- Computational Grid ----------
+
+ctx.strokeStyle="rgba(255,255,255,.035)";
+
+for(let x=0;x<1600;x+=40){
+
+ctx.beginPath();
+
+ctx.moveTo(x,0);
+
+ctx.lineTo(x,500);
+
+ctx.stroke();
+
+}
+
+for(let y=0;y<500;y+=40){
+
+ctx.beginPath();
+
+ctx.moveTo(0,y);
+
+ctx.lineTo(1600,y);
+
+ctx.stroke();
+
+}
+
+
+
+// ---------- Horizon Glow ----------
+
+let glow=ctx.createRadialGradient(
+
+800,
+
+250,
+
+50,
+
+800,
+
+250,
+
+350
+
+);
+
+glow.addColorStop(0,"rgba(255,255,255,.05)");
+glow.addColorStop(.35,"rgba(120,120,255,.03)");
+glow.addColorStop(1,"rgba(0,0,0,0)");
+
+ctx.fillStyle=glow;
+
+ctx.beginPath();
+
+ctx.arc(800,250,350,0,Math.PI*2);
+
+ctx.fill();
+
+}
+
+animate();
+
+</script>
+
+</body>
+</html>
+
+// ===============================
+// BLACK HOLE - STEP 2
+// ===============================
+
+const cx = 800;
+const cy = 250;
+
+ctx.save();
+
+// Outer energy glow
+let outer = ctx.createRadialGradient(
+    cx, cy, 70,
+    cx, cy, 260
+);
+
+outer.addColorStop(0.00,"rgba(255,255,255,0.10)");
+outer.addColorStop(0.10,"rgba(190,200,255,0.18)");
+outer.addColorStop(0.25,"rgba(120,110,255,0.16)");
+outer.addColorStop(0.45,"rgba(80,80,180,0.08)");
+outer.addColorStop(1.00,"rgba(0,0,0,0)");
+
+ctx.fillStyle = outer;
+ctx.beginPath();
+ctx.arc(cx,cy,260,0,Math.PI*2);
+ctx.fill();
+
+
+// ---------- Accretion Disk ----------
+
+ctx.translate(cx,cy);
+ctx.rotate(t*0.04);
+
+for(let i=0;i<160;i++){
+
+    const r = 95 + i;
+
+    ctx.beginPath();
+
+    ctx.strokeStyle =
+    `rgba(255,${245-i*0.35},${220-i*0.55},
+    ${0.8-i/240})`;
+
+    ctx.lineWidth = 2;
+
+    ctx.ellipse(
+        0,
+        0,
+        r,
+        r*0.28,
+        0,
+        0,
+        Math.PI*2
+    );
+
+    ctx.stroke();
+
+}
+
+ctx.restore();
+
+
+// ---------- Photon Ring ----------
+
+ctx.beginPath();
+
+ctx.strokeStyle="rgba(255,255,255,.95)";
+ctx.lineWidth=5;
+
+ctx.arc(cx,cy,74,0,Math.PI*2);
+
+ctx.stroke();
+
+
+// ---------- Event Horizon ----------
+
+ctx.beginPath();
+
+ctx.fillStyle="#000";
+
+ctx.arc(cx,cy,70,0,Math.PI*2);
+
+ctx.fill();
+
+
+// ---------- Bloom ----------
+
+for(let i=0;i<18;i++){
+
+ctx.beginPath();
+
+ctx.strokeStyle=`rgba(255,255,255,${0.02-i/1200})`;
+
+ctx.lineWidth=10;
+
+ctx.arc(cx,cy,82+i*2,0,Math.PI*2);
+
+ctx.stroke();
+
+}
+
+
+// ---------- Space-Time Rings ----------
+
+ctx.strokeStyle="rgba(255,255,255,.025)";
+
+for(let i=0;i<18;i++){
+
+ctx.beginPath();
+
+ctx.arc(
+cx,
+cy,
+120+i*18,
+0,
+Math.PI*2
+);
+
+ctx.stroke();
+
+  }
+
+// =====================================
+// GRAVITATIONAL LENSING
+// =====================================
+
+ctx.save();
+
+ctx.translate(cx, cy);
+
+for (let i = 0; i < 90; i++) {
+
+    const y = -65 + i * 1.45;
+
+    const width =
+        170 -
+        Math.abs(y) * 1.2 +
+        Math.sin(i * 0.18 + t * 2) * 6;
+
+    const alpha =
+        0.12 -
+        Math.abs(y) / 1200;
+
+    ctx.beginPath();
+
+    ctx.strokeStyle =
+        `rgba(255,255,255,${alpha})`;
+
+    ctx.lineWidth = 2;
+
+    ctx.moveTo(-width, y);
+
+    ctx.bezierCurveTo(
+
+        -40,
+        y - 12,
+
+        40,
+        y - 12,
+
+        width,
+        y
+
+    );
+
+    ctx.stroke();
+
+}
+
+ctx.restore();
+  for(let i=0;i<180;i++){
+
+    const radius = 90 + i;
+
+    ctx.beginPath();
+
+    ctx.strokeStyle=
+    `rgba(
+        ${255},
+        ${240-i*0.25},
+        ${220-i*0.55},
+        ${0.9-i/220}
+    )`;
+
+    ctx.lineWidth=2;
+
+    ctx.ellipse(
+
+        Math.sin(i*.08+t)*2,
+
+        Math.cos(i*.05+t)*1,
+
+        radius+Math.sin(i*.15+t*2)*6,
+
+        radius*.28,
+
+        Math.sin(i*.01)*.05,
+
+        0,
+
+        Math.PI*2
+
+    );
+
+    ctx.stroke();
+
+}
+    for(let i=0;i<220;i++){
+
+const angle=Math.random()*Math.PI*2;
+
+const r=170+Math.random()*180;
+
+const x=cx+Math.cos(angle)*r;
+
+const y=cy+Math.sin(angle)*r*.35;
+
+ctx.beginPath();
+
+ctx.strokeStyle="rgba(255,255,255,.03)";
+
+ctx.moveTo(
+
+x,
+
+y
+
+);
+
+ctx.lineTo(
+
+x+Math.cos(angle)*30,
+
+y+Math.sin(angle)*30
+
+);
+
+ctx.stroke();
+
+}
+
+      // ================================
+// WARPED SPACETIME GRID
+// ================================
+
+ctx.strokeStyle = "rgba(255,255,255,.045)";
+ctx.lineWidth = 1;
+
+for(let x=0;x<1600;x+=35){
+
+    ctx.beginPath();
+
+    for(let y=0;y<=500;y+=5){
+
+        let dx=x-cx;
+        let dy=y-cy;
+
+        let d=Math.sqrt(dx*dx+dy*dy);
+
+        let strength=Math.max(0,220-d)/220;
+
+        let warpX=x+(dx/(d+1))*strength*35;
+        let warpY=y+(dy/(d+1))*strength*35;
+
+        if(y===0)
+            ctx.moveTo(warpX,warpY);
+        else
+            ctx.lineTo(warpX,warpY);
+
+    }
+
+    ctx.stroke();
+
+}
+
+for(let y=0;y<500;y+=35){
+
+    ctx.beginPath();
+
+    for(let x=0;x<=1600;x+=5){
+
+        let dx=x-cx;
+        let dy=y-cy;
+
+        let d=Math.sqrt(dx*dx+dy*dy);
+
+        let strength=Math.max(0,220-d)/220;
+
+        let warpX=x+(dx/(d+1))*strength*35;
+        let warpY=y+(dy/(d+1))*strength*35;
+
+        if(x===0)
+            ctx.moveTo(warpX,warpY);
+        else
+            ctx.lineTo(warpX,warpY);
+
+    }
+
+    ctx.stroke();
+
+}
+      // ================================
+// NEURAL GRAPH
+// ================================
+
+const nodes=[];
+
+for(let i=0;i<45;i++){
+
+    nodes.push({
+
+        x:1050+Math.random()*430,
+
+        y:80+Math.random()*320
+
+    });
+
+}
+
+ctx.lineWidth=1;
+
+for(let a=0;a<nodes.length;a++){
+
+for(let b=a+1;b<nodes.length;b++){
+
+let dx=nodes[a].x-nodes[b].x;
+let dy=nodes[a].y-nodes[b].y;
+
+let d=Math.sqrt(dx*dx+dy*dy);
+
+if(d<120){
+
+ctx.strokeStyle="rgba(180,190,255,.12)";
+
+ctx.beginPath();
+
+ctx.moveTo(nodes[a].x,nodes[a].y);
+
+ctx.lineTo(nodes[b].x,nodes[b].y);
+
+ctx.stroke();
+
+}
+
+}
+
+}
+
+for(const n of nodes){
+
+ctx.beginPath();
+
+ctx.fillStyle="white";
+
+ctx.arc(n.x,n.y,2.5,0,Math.PI*2);
+
+ctx.fill();
+
+}
+  // ================================
+// SPIRAL DUST
+// ================================
+
+for(let i=0;i<1400;i++){
+
+let angle=i*.045+t*.12;
+
+let r=90+i*.16;
+
+let x=cx+Math.cos(angle)*r;
+
+let y=cy+Math.sin(angle)*r*.33;
+
+ctx.fillStyle="rgba(255,245,230,.03)";
+
+ctx.fillRect(x,y,1.5,1.5);
+
+}
+  // ================================
+// FLOWING NEBULA
+// ================================
+
+ctx.save();
+
+ctx.globalCompositeOperation="screen";
+
+for(let i=0;i<12;i++){
+
+let grad=ctx.createRadialGradient(
+
+350+i*90,
+
+220+Math.sin(t+i)*35,
+
+0,
+
+350+i*90,
+
+220,
+
+180
+
+);
+
+grad.addColorStop(0,"rgba(120,160,255,.06)");
+grad.addColorStop(.6,"rgba(120,80,255,.03)");
+grad.addColorStop(1,"transparent");
+
+ctx.fillStyle=grad;
+
+ctx.beginPath();
+
+ctx.arc(
+
+350+i*90,
+
+220,
+
+180,
+
+0,
+
+Math.PI*2
+
+);
+
+ctx.fill();
+
+}
+
+ctx.restore();
+  ctx.strokeStyle="rgba(255,255,255,.08)";
+ctx.lineWidth=1;
+
+ctx.strokeRect(20,20,1560,460);
+
+
+  
