@@ -1,243 +1,239 @@
 <svg xmlns="http://www.w3.org/2000/svg"
-     width="820"
-     height="520"
-     viewBox="0 0 820 520">
+     width="900"
+     height="540"
+     viewBox="0 0 900 540">
 
 <defs>
 
 <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-<stop offset="0%" stop-color="#0c111b"/>
-<stop offset="100%" stop-color="#111827"/>
+  <stop offset="0%" stop-color="#0b1220"/>
+  <stop offset="100%" stop-color="#161b2d"/>
 </linearGradient>
 
 <filter id="shadow">
-<feDropShadow dx="0"
-dy="0"
-stdDeviation="10"
-flood-color="#6ea8ff"
-flood-opacity="0.35"/>
+  <feDropShadow dx="0"
+                dy="0"
+                stdDeviation="12"
+                flood-color="#60a5fa"
+                flood-opacity="0.25"/>
 </filter>
 
 <style>
 
 text{
-font-family:Consolas,'Courier New',monospace;
+font-family:JetBrains Mono,Consolas,monospace;
 }
 
-.title{
-fill:#9cb7ff;
-font-size:24px;
-font-weight:bold;
+.term{
+fill:#d7dde8;
+font-size:20px;
 }
 
 .label{
-fill:#78a7ff;
-font-size:18px;
+fill:#7fb2ff;
+font-size:20px;
+font-weight:600;
 }
 
 .value{
-fill:#f2f4f8;
-font-size:18px;
+fill:#f8fafc;
+font-size:20px;
 }
 
 .green{
-fill:#66ff7a;
-font-size:18px;
+fill:#7CFC8A;
+font-size:20px;
 }
 
 .gray{
-fill:#8892a7;
-font-size:16px;
+fill:#7f8ea8;
+font-size:18px;
+}
+
+.arch{
+fill:#37b4ff;
+font-size:18px;
 }
 
 .cursor{
-fill:#7aa7ff;
+fill:#6ea8ff;
 animation:blink 1s infinite;
 }
 
 @keyframes blink{
-
-0%,50%{
-opacity:1;
-}
-
-51%,100%{
-opacity:0;
-}
-
+0%,50%{opacity:1;}
+51%,100%{opacity:0;}
 }
 
 </style>
 
 </defs>
 
-<!-- Terminal -->
+<!-- terminal -->
 
 <rect
 x="20"
 y="20"
-width="780"
-height="480"
-rx="20"
+width="860"
+height="500"
+rx="18"
 fill="url(#bg)"
-stroke="#2f3852"
+stroke="#2d3550"
 stroke-width="2"
 filter="url(#shadow)"/>
 
-<!-- Top Bar -->
+<!-- titlebar -->
 
-<circle cx="52" cy="48" r="8" fill="#ff605c"/>
-<circle cx="78" cy="48" r="8" fill="#ffbd44"/>
-<circle cx="104" cy="48" r="8" fill="#00ca4e"/>
+<circle cx="50" cy="46" r="8" fill="#ff5f56"/>
+<circle cx="76" cy="46" r="8" fill="#ffbd2e"/>
+<circle cx="102" cy="46" r="8" fill="#27c93f"/>
 
 <text
 x="145"
-y="54"
+y="52"
 class="gray">
-root@vlastimir:~/profile
+vlastimir@arch:~
 </text>
 
 <line
 x1="20"
-y1="75"
-x2="800"
-y2="75"
-stroke="#293248"/>
+y1="74"
+x2="880"
+y2="74"
+stroke="#27324b"/>
 
-<!-- Prompt -->
+<!-- prompt -->
 
 <text
-x="52"
-y="115"
+x="50"
+y="118"
 class="green">
-$ neofetch
+$ fastfetch
 </text>
 
 <rect
-x="170"
-y="99"
+x="182"
+y="100"
 width="8"
 height="22"
 class="cursor"/>
 
-<!-- Divider -->
+<!-- divider -->
 
 <line
-x1="250"
-y1="120"
-x2="250"
+x1="300"
+y1="125"
+x2="300"
 y2="470"
-stroke="#2d3550"
+stroke="#27324b"
 stroke-width="2"/>
 
-<!-- Linux Logo -->
 
-<text x="55" y="165" class="label">      .--.</text>
-<text x="55" y="190" class="label">     |o_o |</text>
-<text x="55" y="215" class="label">     |:_/ |</text>
-<text x="55" y="240" class="label">    //   \ \</text>
-<text x="55" y="265" class="label">   (|     | )</text>
-<text x="55" y="290" class="label">  /'\_   _/`\</text>
-<text x="55" y="315" class="label">  \___)=(___/</text>
+<!-- Arch Linux Logo -->
 
-<!-- Right Side -->
+<text x="55" y="170" class="arch">       /\</text>
+<text x="55" y="195" class="arch">      /  \</text>
+<text x="55" y="220" class="arch">     /\   \</text>
+<text x="55" y="245" class="arch">    /      \</text>
+<text x="55" y="270" class="arch">   /   ,,   \</text>
+<text x="55" y="295" class="arch">  /   |  |  -\</text>
+<text x="55" y="320" class="arch"> /_-''    ''-_\</text>
 
-<text x="290" y="145" class="green">$ whoami</text>
+<!-- System Information -->
 
-<text x="290" y="185" class="label">OS</text>
-<text x="430" y="185" class="value">Linux</text>
+<text x="340" y="130" class="green">$ whoami</text>
 
-<text x="290" y="215" class="label">User</text>
-<text x="430" y="215" class="value">Vlastimir</text>
+<text x="340" y="170" class="label">OS</text>
+<text x="500" y="170" class="value">Arch Linux</text>
 
-<text x="290" y="245" class="label">Role</text>
-<text x="430" y="245" class="value">Computer Science Student</text>
+<text x="340" y="205" class="label">User</text>
+<text x="500" y="205" class="value">Vlastimir</text>
 
-<text x="290" y="275" class="label">Focus</text>
-<text x="430" y="275" class="value">AI • Cybersecurity</text>
+<text x="340" y="240" class="label">Shell</text>
+<text x="500" y="240" class="value">zsh</text>
 
-<text x="290" y="305" class="label">Languages</text>
-<text x="430" y="305" class="value">Python • C++</text>
+<text x="340" y="275" class="label">Editor</text>
+<text x="500" y="275" class="value">Neovim</text>
 
-<text x="290" y="335" class="label">Shell</text>
-<text x="430" y="335" class="value">bash</text>
+<text x="340" y="310" class="label">Languages</text>
+<text x="500" y="310" class="value">Python • C++</text>
 
-<line
-x1="290"
-y1="360"
-x2="740"
-y2="360"
-stroke="#2d3550"/>
-
-<text x="290" y="395" class="green">$ currently</text>
-
-<text x="315" y="430" class="value">▸ Writing Python code...</text>
-
-<text x="315" y="460" class="value">▸ Grinding on TryHackMe...</text>
+<text x="340" y="345" class="label">Focus</text>
+<text x="500" y="345" class="value">AI • Cybersecurity</text>
 
 <line
-x1="290"
-y1="485"
-x2="740"
-y2="485"
-stroke="#2d3550"/>
+x1="340"
+y1="375"
+x2="820"
+y2="375"
+stroke="#27324b"/>
 
-<text x="290" y="520" class="green">$ git status</text>
-
-<text x="315" y="555" class="gray">
-On branch main
+<text
+x="340"
+y="415"
+class="green">
+$ activity
 </text>
 
-<text x="315" y="580" class="gray">
-Your branch is up to date with 'origin/main'.
-</text>
+<!-- Activity -->
 
-<text x="315" y="605" class="green">
-nothing to commit,
-</text>
+<text x="365" y="455" class="term">$ git status</text>
+<text x="390" y="485" class="green">✓ working tree clean</text>
 
-<text x="315" y="630" class="green">
-working tree clean
-</text>
+<text x="365" y="520" class="term">$ python main.py</text>
+<text x="390" y="550" class="green">✓ Building GitHub profile...</text>
 
-<!-- Blinking Cursor -->
+<text x="365" y="585" class="term">$ tryhackme</text>
+<text x="390" y="615" class="green">✓ Grinding Linux Fundamentals</text>
 
-<rect
-x="520"
-y="613"
-width="8"
-height="20"
-fill="#6ea8ff">
+<text x="365" y="650" class="term">$ leetcode</text>
+<text x="390" y="680" class="green">✓ Solving today's problem</text>
 
-<animate
-attributeName="opacity"
-values="1;0;1"
-dur="1s"
-repeatCount="indefinite"/>
-
-</rect>
-
-<!-- Bottom Prompt -->
+<!-- Bottom divider -->
 
 <line
 x1="20"
-y1="458"
-x2="800"
-y2="458"
-stroke="#293248"/>
+y1="470"
+x2="880"
+y2="470"
+stroke="#27324b"/>
+
+<!-- Bottom prompt -->
 
 <text
-x="52"
-y="485"
+x="45"
+y="500"
 class="green">
+vlastimir@arch
+</text>
+
+<text
+x="180"
+y="500"
+class="term">
+:
+</text>
+
+<text
+x="190"
+y="500"
+fill="#60a5fa"
+font-size="20">
+~
+</text>
+
+<text
+x="208"
+y="500"
+class="term">
 $
 </text>
 
 <rect
-x="66"
-y="469"
+x="225"
+y="482"
 width="8"
-height="20"
+height="22"
 fill="#6ea8ff">
 
 <animate
