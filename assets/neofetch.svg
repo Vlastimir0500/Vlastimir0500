@@ -1,1 +1,244 @@
+<svg width="760" height="420" viewBox="0 0 760 420"
+     xmlns="http://www.w3.org/2000/svg">
 
+<defs>
+
+<linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#0b0f19"/>
+<stop offset="100%" stop-color="#121826"/>
+</linearGradient>
+
+<linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#6ea8ff"/>
+<stop offset="100%" stop-color="#8cb8ff"/>
+</linearGradient>
+
+<filter id="shadow">
+<feDropShadow dx="0" dy="0" stdDeviation="8"
+              flood-color="#5f95ff"
+              flood-opacity="0.45"/>
+</filter>
+
+<style>
+text{
+font-family:Consolas,'Courier New',monospace;
+}
+
+.label{
+fill:#7ea9ff;
+font-size:18px;
+}
+
+.value{
+fill:#ffffff;
+font-size:18px;
+}
+
+.small{
+fill:#7c8698;
+font-size:16px;
+}
+
+.green{
+fill:#67ff7d;
+font-size:18px;
+}
+
+.cursor{
+fill:#6ea8ff;
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+0%,50%{opacity:1;}
+51%,100%{opacity:0;}
+}
+
+.type{
+overflow:hidden;
+white-space:nowrap;
+animation:type 2.8s steps(18,end);
+}
+
+@keyframes type{
+from{width:0;}
+to{width:100%;}
+}
+</style>
+
+</defs>
+
+<rect
+x="20"
+y="20"
+width="720"
+height="380"
+rx="22"
+fill="url(#bg)"
+stroke="#2b3348"
+stroke-width="2"
+filter="url(#shadow)"/>
+
+<circle cx="55" cy="52" r="9" fill="#ff5f56"/>
+<circle cx="82" cy="52" r="9" fill="#ffbd2e"/>
+<circle cx="109" cy="52" r="9" fill="#27c93f"/>
+
+<text
+x="140"
+y="58"
+class="small">
+root@vlastimir:~/profile
+</text>
+
+<line
+x1="20"
+y1="78"
+x2="740"
+y2="78"
+stroke="#293145"/>
+
+<text
+x="55"
+y="118"
+class="green">
+$ neofetch
+</text>
+
+<rect
+x="182"
+y="101"
+width="8"
+height="20"
+class="cursor"/>
+
+<!-- Linux Logo -->
+
+<g transform="translate(60 155)">
+
+<text x="0" y="0" class="label">       .--.</text>
+<text x="0" y="24" class="label">      |o_o |</text>
+<text x="0" y="48" class="label">      |:_/ |</text>
+<text x="0" y="72" class="label">     //   \ \</text>
+<text x="0" y="96" class="label">    (|     | )</text>
+<text x="0" y="120" class="label">   /'\_   _/`\</text>
+<text x="0" y="144" class="label">   \___)=(___/</text>
+
+</g>
+
+<!-- Information -->
+
+<text x="265" y="150" class="label">OS</text>
+<text x="365" y="150" class="value">Linux</text>
+
+<text x="265" y="182" class="label">User</text>
+<text x="365" y="182" class="value">Vlastimir</text>
+
+<text x="265" y="214" class="label">Role</text>
+<text x="365" y="214" class="value">Computer Science Student</text>
+
+<text x="265" y="246" class="label">Focus</text>
+<text x="365" y="246" class="value">AI • Cybersecurity</text>
+
+<text x="265" y="278" class="label">Languages</text>
+<text x="365" y="278" class="value">Python • C++</text>
+
+<text x="265" y="310" class="label">Learning</text>
+<text x="365" y="310" class="value">LeetCode • TryHackMe</text>
+
+<text x="265" y="342" class="label">Status</text>
+<text x="365" y="342" class="green">Building cool things...</text>
+
+<!-- Decorative separator -->
+
+<line
+x1="240"
+y1="120"
+x2="240"
+y2="355"
+stroke="#2b3348"
+stroke-width="2"/>
+
+<!-- Terminal prompt -->
+
+<text x="55" y="375" class="green">$ </text>
+
+<text x="78" y="375" class="value">
+cat /etc/profile
+</text>
+
+<!-- CPU -->
+
+<text x="540" y="150" class="label">CPU</text>
+
+<rect x="540" y="160" width="130" height="10" rx="5" fill="#232b3a"/>
+<rect x="540" y="160" width="88" height="10" rx="5" fill="#63ff8d">
+<animate attributeName="width"
+values="70;95;82;104;88;70"
+dur="5s"
+repeatCount="indefinite"/>
+</rect>
+
+<!-- RAM -->
+
+<text x="540" y="205" class="label">RAM</text>
+
+<rect x="540" y="215" width="130" height="10" rx="5" fill="#232b3a"/>
+<rect x="540" y="215" width="102" height="10" rx="5" fill="#6ea8ff">
+<animate attributeName="width"
+values="95;115;100;120;102;95"
+dur="6s"
+repeatCount="indefinite"/>
+</rect>
+
+<!-- STORAGE -->
+
+<text x="540" y="260" class="label">Storage</text>
+
+<rect x="540" y="270" width="130" height="10" rx="5" fill="#232b3a"/>
+<rect x="540" y="270" width="74" height="10" rx="5" fill="#ffb86b">
+<animate attributeName="width"
+values="60;80;72;90;74;60"
+dur="7s"
+repeatCount="indefinite"/>
+</rect>
+
+<!-- Status LEDs -->
+
+<circle cx="690" cy="160" r="5" fill="#6ea8ff">
+<animate attributeName="opacity"
+values="1;.3;1"
+dur="1.2s"
+repeatCount="indefinite"/>
+</circle>
+
+<circle cx="690" cy="190" r="5" fill="#67ff7d">
+<animate attributeName="opacity"
+values=".3;1;.3"
+dur="1.5s"
+repeatCount="indefinite"/>
+</circle>
+
+<circle cx="690" cy="220" r="5" fill="#ffbd2e">
+<animate attributeName="opacity"
+values="1;.2;1"
+dur="2s"
+repeatCount="indefinite"/>
+</circle>
+
+<!-- Footer -->
+
+<line
+x1="40"
+y1="392"
+x2="720"
+y2="392"
+stroke="#293145"/>
+
+<text
+x="55"
+y="412"
+class="small">
+Last login: today • GitHub Profile • Linux Terminal
+</text>
+
+</svg>
