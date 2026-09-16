@@ -42,7 +42,7 @@
 
 
 # 💫 About Me:
-Hey, I'm **Rattandeep** — a computer science enthusiast who enjoys building, breaking, and understanding technology. My interests span AI/ML, cybersecurity, systems programming, mathematics, scientific computing, and open-source software. I spend most of my time writing Python, exploring Linux, solving LeetCode problems, completing TryHackMe labs, and creating projects that automate or simplify real-world tasks. I'm driven by curiosity, research, and the challenge of learning something new every day. This GitHub is where I document my progress, experiments, and ideas as I work toward becoming a computational engineer and researcher. Always learning, always building, and always looking for the next interesting problem to solve.<br><br>
+Hey, I'm **Vlastimir** — a computer science enthusiast who enjoys building, breaking, and understanding technology. My interests span AI/ML, cybersecurity, systems programming, mathematics, scientific computing, and open-source software. I spend most of my time writing Python, exploring Linux, solving LeetCode problems, completing TryHackMe labs, and creating projects that automate or simplify real-world tasks. I'm driven by curiosity, research, and the challenge of learning something new every day. This GitHub is where I document my progress, experiments, and ideas as I work toward becoming a computational engineer and researcher. Always learning, always building, and always looking for the next interesting problem to solve.<br><br>
 
 
 ## 🌐 Socials:
